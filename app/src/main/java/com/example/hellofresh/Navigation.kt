@@ -7,6 +7,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import com.example.hellofresh.ui.theme.uIs.mainScreenUi
 import com.example.hellofresh.ui.theme.uIs.onBoardingScreenUi
+import com.example.hellofresh.ui.theme.uIs.shopScreenUI
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 /*
@@ -26,7 +27,11 @@ fun navigation() {
         }
 
         composable(route=Screens.OnBoardingScreen.route){
-            onBoardingScreenUi()
+            onBoardingScreenUi(navController)
+        }
+
+        composable(route=Screens.ShopScreen.route){
+            shopScreenUI()
         }
     }
 

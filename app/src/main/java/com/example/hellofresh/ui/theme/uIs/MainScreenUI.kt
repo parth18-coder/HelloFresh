@@ -55,7 +55,7 @@ fun mainScreenUi(navController: NavController) {
         }
     }
 
-    bottomSheetObj.BottomSheet(sheetState)
+    bottomSheetObj.BottomSheet(sheetState,navController)
 }
 
 @Composable

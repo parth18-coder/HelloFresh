@@ -20,6 +20,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
 import com.example.hellofresh.BottomSheetScreen
 import com.example.hellofresh.OnBoardingData
 //import com.example.hellofresh.indicator
@@ -35,7 +36,7 @@ import com.example.hellofresh.R
 @Composable
 @ExperimentalPagerApi
 @ExperimentalMaterialApi
-fun onBoardingScreenUi(){
+fun onBoardingScreenUi(navController: NavController){
 
     val items = onBoardingData()
     val pagerState = rememberPagerState(
@@ -67,7 +68,7 @@ fun onBoardingScreenUi(){
 
     }
 
-    bottomSheetObj.BottomSheet(sheetState)
+    bottomSheetObj.BottomSheet(sheetState,navController)
 
 
 
