@@ -15,6 +15,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
+import com.example.hellofresh.navigation.Graph
 
 class BottomSheetScreen {
     @Composable
@@ -66,7 +67,7 @@ class BottomSheetScreen {
                         }
 
                         Button(
-                            onClick = {navController.navigate(Screens.ShopScreen.route)}, modifier = Modifier.fillMaxWidth(),
+                            onClick = {navController.navigate(Graph.BOTTOM_NAVIGATION)}, modifier = Modifier.fillMaxWidth(),
                             colors = ButtonDefaults.buttonColors(
                                 backgroundColor = Color.White,
                                 contentColor = Color(0xFF1B5E20)

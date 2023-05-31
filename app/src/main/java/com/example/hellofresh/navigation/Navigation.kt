@@ -1,13 +1,13 @@
-package com.example.hellofresh
+package com.example.hellofresh.navigation
 
 import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.runtime.Composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.example.hellofresh.ui.theme.uIs.mainScreenUi
-import com.example.hellofresh.ui.theme.uIs.onBoardingScreenUi
-import com.example.hellofresh.ui.theme.uIs.shopScreenUI
+import com.example.hellofresh.Screens
+import com.example.hellofresh.bottomNavigationScreen
+import com.example.hellofresh.ui.theme.uIs.*
 import com.google.accompanist.pager.ExperimentalPagerApi
 
 /*
@@ -18,10 +18,14 @@ implementation "androidx.navigation:navigation-compose:2.4.0-alpha04"
 @Composable
 @ExperimentalPagerApi
 @ExperimentalMaterialApi
-fun navigation() {
+fun Navigation() {
     var navController = rememberNavController()
 
-    NavHost(navController = navController, startDestination = Screens.MainScreen.route) {
+    NavHost(
+        navController = navController,
+        startDestination = Screens.MainScreen.route,
+        route=Graph.Root
+    ) {
         composable(route=Screens.MainScreen.route){
             mainScreenUi(navController)
         }
@@ -30,9 +34,14 @@ fun navigation() {
             onBoardingScreenUi(navController)
         }
 
-        composable(route=Screens.ShopScreen.route){
-            shopScreenUI()
+        composable(route=Graph.BOTTOM_NAVIGATION){
+            bottomNavigationScreen()
         }
     }
+}
 
+object Graph{
+    const val Root="root_graph"
+    const val BOTTOM_NAVIGATION="bottom_navigation_graph"
+    const val BASIC_NAVIGATION="basic_navigation_graph"
 }

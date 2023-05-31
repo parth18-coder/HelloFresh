@@ -34,6 +34,7 @@ import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.example.hellofresh.BottomSheetScreen.*
+import com.example.hellofresh.navigation.Navigation
 import kotlinx.coroutines.launch
 
 
@@ -48,7 +49,7 @@ class MainActivity : ComponentActivity() {
         window.statusBarColor = ContextCompat.getColor(this, R.color.dark_green)
 
         setContent {
-            navigation()
+            Navigation()
         }
     }
 }
